@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <!--spring 3 注释加载-->
+
+    <bean id="circle" class="com.xc.spring3.shapes.Circle" autowire-candidate="false">
+        <property name="autowire" value="name"></property>
+        <property name="id" value="circle"></property>
+    </bean>
+
+    <bean id="circle2" class="com.xc.spring3.shapes.Circle">
+        <property name="autowire" value="type"></property>
+        <property name="id" value="circle2"></property>
+    </bean>
+
+    <!--shapeBox no wiring! -->
+    <bean id="shapeBox" class="com.xc.spring3.ShapeBox" />
+
+    <!--shapeBox wire by name -->
+    <bean id="shapeBox2" class="com.xc.spring3.ShapeBox" autowire="byName" />
+
+    <!--shapeBox wire by type -->
+    <bean id="shapeBox3" class="com.xc.spring3.ShapeBox" autowire="byType" />
+
+    <!--shapeBox wire by constructor -->
+    <bean id="shapeBox4" class="com.xc.spring3.ShapeBox" autowire="constructor" />
+
+</beans>
